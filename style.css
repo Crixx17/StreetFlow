@@ -1,568 +1,438 @@
-
-
-
-body
-{
-background-color: #000;
-padding-left: 55px;
+/* --- CSS Reset Avanzado & Box Model --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-h1
-{
-color: whitesmoke;
-font-family: Montserrat;
-font-size: 35px;
-padding-top: 10px;
-padding-left: 10px;
-text-align: center;
+
+body {
+    background-color: #000;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px 15px;
+    overflow-x: hidden; /* Evita scrolls horizontales accidentales en móviles */
 }
-.linea
-{ 
-    margin: auto;
-    width: 20cm;
+
+/* --- Encabezado --- */
+.main-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+h1 {
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 5vw, 42px); /* Tamaño fluido: se encoge en móvil, crece en PC */
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.linea { 
+    margin: 12px auto 0 auto;
+    width: 100%;
+    max-width: 500px; /* Ya no rompe en móvil al remover los 'cm' fijos */
     height: 1px;
     background-color: #e60023;
-    
-}
-.espacio
-{
-    padding-top: 20px;
-}
-/*camisetas*/
-.contenedor_seleccion
-{
-display: flex;
-flex-wrap: wrap; 
-gap: 30px; 
-
 }
 
-.camisetas
-{
-
-display: inline-block;
-padding: 0.5rem 1.0rem;
-font-size: 13px;
-font-weight: 700;
-color: whitesmoke;
-border: 1px solid #e60023;
-cursor: pointer;
-position: relative;
-background-color: transparent;
-text-decoration: none;
-overflow: hidden;
-z-index: 1;
-font-family: inherit;
-margin-left: 20px;
-border-radius: 5px;
+/* --- Barra de Herramientas Superior (Estructura Elástica) --- */
+.bar-herramientas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite bajar de línea fluidamente si no hay espacio */
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 0 10px;
 }
 
-.camisetas::before {
-content: "";
-position: absolute;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background-color: #e60023;
-transform: translateX(-100%);
-transition: all .3s;
-z-index: -1;
-
-}
-
-.camisetas:hover::before {
-transform: translateX(0);
-}
-
-/*sudaderas*/
-.sudaderas
-{
-display: inline-block;
-padding: 0.5rem 1.0rem;
-font-size: 13px;
-font-weight: 700;
-color: whitesmoke;
-border: 1px solid #e60023;
-cursor: pointer;
-position: relative;
-background-color: transparent;
-text-decoration: none;
-overflow: hidden;
-z-index: 1;
-font-family: inherit;
-border-radius: 5px;
-}
-
-.sudaderas::before {
-content: "";
-position: absolute;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background-color: #e60023;
-transform: translateX(-100%);
-transition: all .3s;
-z-index: -1;
-}
-
-.sudaderas:hover::before {
-transform: translateX(0);
-}
-
-/*pantalones*/
-.pantalones
-{
-display: inline-block;
-padding: 0.5rem 1.0rem;
-font-size: 13px;
-font-weight: 700;
-color: whitesmoke;
-border: 1px solid #e60023;
-cursor: pointer;
-position: relative;
-background-color: transparent;
-text-decoration: none;
-overflow: hidden;
-z-index: 1;
-font-family: inherit;
-border-radius: 5px;
-}
-
-.pantalones::before {
-content: "";
-position: absolute;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background-color: #e60023;
-transform: translateX(-100%);
-transition: all .3s;
-z-index: -1;
-}
-
-.pantalones:hover::before {
-transform: translateX(0);
-}
-
-/*chaquetas*/
-.chaquetas
-{
-display: inline-block;
-padding: 0.5rem 1.0rem;
-font-size: 13px;
-font-weight: 700;
-color: whitesmoke;
-border: 1px solid #e60023;
-cursor: pointer;
-position: relative;
-background-color: transparent;
-text-decoration: none;
-overflow: hidden;
-z-index: 1;
-font-family: inherit;
-border-radius: 5px;
-}
-
-.chaquetas::before {
-content: "";
-position: absolute;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background-color: #e60023;
-transform: translateX(-100%);
-transition: all .3s;
-z-index: -1;
-}
-
-.chaquetas:hover::before {
-transform: translateX(0);
-}
-
-/*gorras*/
-.gorras
-{
-display: inline-block;
-padding: 0.5rem 1.0rem;
-font-size: 13px;
-font-weight: 700;
-color: whitesmoke;
-border: 1px solid #e60023;
-cursor: pointer;
-position: relative;
-background-color: transparent;
-text-decoration: none;
-overflow: hidden;
-z-index: 1;
-font-family: inherit;
-border-radius: 5px;
-}
-
-.gorras::before {
-content: "";
-position: absolute;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background-color: #e60023;
-transform: translateX(-100%);
-transition: all .3s;
-z-index: -1;
-}
-
-.gorras:hover::before {
-transform: translateX(0);
-}
-
-/*zapatillas*/
-
-.zapatillas
-{
-display: inline-block;
-padding: 0.5rem 1.0rem;
-font-size: 13px;
-font-weight: 700;
-color: whitesmoke;
-border: 1px solid #e60023;
-cursor: pointer;
-position: relative;
-background-color: transparent;
-text-decoration: none;
-overflow: hidden;
-z-index: 1;
-font-family: inherit;
-border-radius: 5px;
-}
-
-.zapatillas::before {
-content: "";
-position: absolute;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background-color: #e60023;
-transform: translateX(-100%);
-transition: all .3s;
-z-index: -1;
-}
-
-.zapatillas:hover::before {
-transform: translateX(0);
-}
-
-/*chalecos_streetwear*/
-
-
-.jeans
-{
-display: inline-block;
-padding: 0.5rem 1.0rem;
-font-size: 13px;
-font-weight: 700;
-color: whitesmoke;
-border: 1px solid #e60023;
-cursor: pointer;
-position: relative;
-background-color: transparent;
-text-decoration: none;
-overflow: hidden;
-z-index: 1;
-font-family: inherit;
-border-radius: 5px;
-}
-
-.jeans::before {
-content: "";
-position: absolute;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background-color: #e60023;
-transform: translateX(-100%);
-transition: all .3s;
-z-index: -1;
-}
-
-.jeans:hover::before {
-transform: translateX(0);
-}
-
-
-
-
-/*Seleccion de sexo*/
-
+/* --- Selector de Género (Radio Buttons) --- */
 .radio-input {
-display: flex;
-flex-direction: row;
-font-family:Montserrat;
-font-size: 16px;
-font-weight: 600;
-color: whitesmoke;
-margin-left: 62rem;
-padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .radio-input input[type="radio"] {
-display: none;
+    display: none;
 }
 
 .radio-input label {
-display: flex;
-align-items: center;
-padding: 10px;
-border: 1px solid #e60023;
-background-color: transparent;
-border-radius: 5px;
-margin-right: 12px;
-cursor: pointer;
-position: relative;
-transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid #e60023;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease-in-out;
 }
 
 .radio-input label:before {
-content: "";
-display: block;
-position: absolute;
-top: 50%;
-left: 0;
-transform: translate(-50%, -50%);
-width: 10px;
-height: 10px;
-border-radius: 50%;
-background-color: whitesmoke;
-border: 2px solid whitesmoke;
-transition: all 0.3s ease-in-out;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    border: 2px solid whitesmoke;
+    transition: all 0.3s ease-in-out;
+    opacity: 0; /* Oculto por defecto para mejor estética */
 }
 
 .radio-input input[type="radio"]:checked + label:before {
-background-color:black;
-top: 0;
+    background-color: black;
+    top: 50%;
+    opacity: 1;
 }
 
 .radio-input input[type="radio"]:checked + label {
-background-color: #e60023;
-color: #fff;
-border-color: whitesmoke ;
-animation: radio-translate 0.5s ease-in-out;
+    background-color: #e60023;
+    color: #fff;
+    border-color: whitesmoke;
+    animation: radio-translate 0.5s ease-in-out;
 }
 
 @keyframes radio-translate {
-0% {
-    transform: translateX(0);
+    0% { transform: translateX(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateX(0); }
 }
 
-50% {
-    transform: translateY(-10px);
-}
-
-100% {
-    transform: translateX(0);
-}
-}
-
-/*Buscador*/
-
+/* --- Buscador Minimalista --- */
 .search-container {
-position: relative;
-width: 200px;
-margin: auto;
-margin-top: -3rem;
+    position: relative;
+    width: 100%;
+    max-width: 280px; /* Tamaño controlado para PC */
 }
 
 .search-bar {
-position: relative;
-display: flex;
-align-items: center;
-background-color: transparent;
-border-radius: 8px;
-padding: 10px;
-overflow: hidden;
-transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 2px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(230, 0, 35, 0.3); /* Un toque sutil de borde rojo */
 }
 
 .search-input {
-width: 100%;
-border: none;
-background: none;
-color: whitesmoke;
-font-size: 16px;
-padding: 10px;
-outline: none;
-font-family: MOntserrat;
-font-weight: 700;
-}
-
-.search-input::placeholder {
-color: whitesmoke;
-}
-
-.search-icon {
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 10px;
-background-color: #e60023;
-border-radius: 50%;
-margin-left: 10px;
-cursor: pointer;
-transition: background-color 0.3s ease;
-}
-
-.search-icon svg {
-fill: whitesmoke;
-}
-
-
-
-.search-bar:focus-within {
-box-shadow: 0 0 5px whitesmoke;
-}
-
-
-/*Mi carrito*/
-
-.btn-cart {
-display: flex;
-align-items: center;
-justify-content: center;
-width: 50px;
-height: 50px;
-border-radius: 10px;
-border: none;
-background-color: transparent;
-position: relative;
-margin-top: -70px;
-}
-
-.btn-cart::after {
-content: attr(data-quantity);
-width: fit-content;
-height: fit-content;
-position: absolute;
-font-size: 15px;
-color: white;
-font-family: Montserrat;
-opacity: 0;
-visibility: hidden;
-transition: .2s linear;
-top: 115%;
-}
-
-.icon-cart {
-width: 24.38px;
-height: 30.52px;
-transition: .2s linear;
-}
-
-.icon-cart path {
-fill: #e60023;
-transition: .2s linear;
-}
-
-.btn-cart:hover > .icon-cart {
-transform: scale(1.2);
-}
-.texto_carrito
-{
-    font-family: Montserrat;
+    width: 100%;
+    border: none;
+    background: none;
     color: whitesmoke;
-    font-size: 13px;
-    margin-left: 50px;
-    margin-top: -35px;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
 
+.search-input::placeholder {
+    color: rgba(245, 245, 245, 0.6);
+}
+
+.search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #e60023;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-icon svg {
+    fill: whitesmoke;
+}
+
+.search-bar:focus-within {
+    box-shadow: 0 0 8px whitesmoke;
+    border-color: whitesmoke;
+}
+
+/* --- Carrito de Compras --- */
+.cart-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-cart::after {
+    content: attr(data-quantity);
+    position: absolute;
+    font-size: 13px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s linear;
+    top: 110%;
+}
+
+.icon-cart {
+    width: 24.38px;
+    height: 30.52px;
+    transition: .2s linear;
+}
+
+.icon-cart path {
+    fill: #e60023;
+    transition: .2s linear;
+}
+
+.btn-cart:hover > .icon-cart {
+    transform: scale(1.15);
+}
+
+.texto_carrito {
+    font-family: 'Montserrat', sans-serif;
+    color: whitesmoke;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* --- Contenedor de Selección (Categorías) --- */
+.contenedor_seleccion {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; 
+    justify-content: center; /* Centrado perfecto en cualquier pantalla */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 45px auto;
+}
+
+/* Optimización Senior: Unificación de Clases Idénticas */
+.camisetas, .sudaderas, .pantalones, .chaquetas, .gorras, .zapatillas, .jeans {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: whitesmoke;
+    border: 1px solid #e60023;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    border-radius: 5px;
+}
+
+.camisetas::before, .sudaderas::before, .pantalones::before, .chaquetas::before, .gorras::before, .zapatillas::before, .jeans::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e60023;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.camisetas:hover::before, .sudaderas:hover::before, .pantalones:hover::before, .chaquetas:hover::before, .gorras:hover::before, .zapatillas:hover::before, .jeans:hover::before {
+    transform: translateX(0);
+}
+
+/* --- Grid del Catálogo de Tarjetas (Reingeniería de Medidas) --- */
+.contenedor-cards {
+    display: grid;
+    /* Divide la pantalla dinámicamente: En móvil hace filas de 2 columnas perfectas, en PC se expande solo */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+    gap: 25px; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
 .card {
-    
-  position: relative;
-  width: 190px;
-  height: 254px;
-  background: whitesmoke;
-  border: solid 1px #e60023;
-  box-shadow: 1px 1px 5px whitesmoke;
-  transition: all .2s ease-in-out;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
+    position: relative;
+    width: 100%; /* Cambiado de un valor estático a 100% para acoplarse al Grid */
+    height: 254px;
+    background: whitesmoke;
+    border: solid 1px #e60023;
+    box-shadow: 1px 1px 5px rgba(245, 245, 245, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 4px;
 }
 
 .card:hover {
-  margin: 10px 10px 0 0;
-
+    transform: translateY(-6px); /* El cambio de márgenes en hover provocaba saltos; esto es óptimo y fluido */
+    box-shadow: 1px 1px 12px rgba(230, 0, 35, 0.6);
 }
 
 .card .img-card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 50px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: filter .2s 1s ease-in-out;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff;
 }
 
-.card:hover .img-card {
-  filter: blur(1px);
+.card .img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que las fotos de la ropa se estiren o distorsionen */
+    transition: filter .3s ease-in-out;
+}
+
+.card:hover .img-card img {
+    filter: blur(3px);
 }
 
 .card .add-cart {
- position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: calc(100% - 50px);
-text-align: center;
-line-height: 250px;
-font-weight: bold;
-font-size: 19px;
-opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px);
+    text-align: center;
+    line-height: 204px; /* Centrado vertical exacto sobre el área de la imagen */
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity .3s ease-in-out;
 }
 
 .card:hover .add-cart {
-opacity: 1;
-transition: opacity .3s 1s ease-in-out;
+    opacity: 1;
 }
 
 .card .info-card {
-position: absolute;
-height: 50px;
-width: 100%;
-bottom: 0;
-left: 0;
-right: 0;
-border-top: solid 1px #e60023;
-  background-color: whitesmoke; /* para que se vea mejor */
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: solid 1px #e60023;
+    background-color: whitesmoke;
+    padding: 6px 8px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .card .info-card p {
-font-size: 14px;
-margin: 5px;
+    font-size: 12px;
+    color: #000;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Si el texto del producto es muy largo, añade '...' de forma elegante */
 }
 
+/* --- Media Queries (Ajustes Milimétricos para Smartphones) --- */
+@media (max-width: 768px) {
+    body {
+        padding: 15px 8px;
+    }
 
-.contenedor-cards 
-{
-display: flex;
-justify-content: center;
-  flex-wrap: wrap; /* para que baje a la siguiente fila si no caben */
-  gap: 40px; /* espacio entre tarjetas */
+    .bar-herramientas {
+        flex-direction: column; /* Cambia a flujo vertical ordenado en móvil */
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .radio-input {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .radio-input label {
+        padding: 8px 12px;
+        font-size: 13px;
+        margin-right: 6px;
+    }
+
+    .search-container {
+        max-width: 100%; /* El buscador aprovecha todo el espacio horizontal del móvil */
+    }
+
+    .cart-container {
+        width: 100%;
+        justify-content: center; /* Centra el carrito debajo del buscador */
+    }
+
+    .contenedor_seleccion {
+        gap: 10px;
+        margin-bottom: 35px;
+    }
+
+    .contenedor_seleccion button {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .contenedor-cards {
+        grid-template-columns: repeat(2, 1fr); /* Fuerza un Grid exacto de 2 columnas por fila en móviles (Estilo e-commerce premium) */
+        gap: 12px; /* Espacio más estrecho y elegante en pantallas pequeñas */
+    }
+    
+    .card {
+        height: 230px; /* Reducción proporcional de altura para pantallas pequeñas */
+    }
+    
+    .card .add-cart {
+        line-height: 180px;
+        font-size: 14px;
+    }
 }
 
-.espacio2
-{
-margin-bottom: 5%;
+@media (max-width: 360px) {
+    /* Ajuste fino para pantallas extremadamente pequeñas (como iPhone SE o móviles antiguos) */
+    .contenedor-cards {
+        grid-template-columns: 1fr; /* Pasa a una sola tarjeta grande centrada si el espacio es crítico */
+        max-width: 240px;
+        margin: 0 auto;
+    }
 }
 
